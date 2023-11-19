@@ -20,9 +20,9 @@ def Deserialize_data():
 def post_data():
     URL="http://127.0.0.1:8000/stu_apic/"
     data={
-        'name':'Neville',
-        'roll':101,
-        'city':'Wogwords'
+        'name':'John',
+        'roll':202,
+        'city':'Hogworts'
     }
     json_data=json.dumps(data)
     r=requests.post(url=URL,data=json_data)
@@ -46,9 +46,9 @@ def update_data():
     URL="http://127.0.0.1:8000/stu_apic/"
     data={
         'id':11,
-        'name':'Neville Longbottom',
-        'roll':102,
-        'city':'Wogwarts'
+        'name':'Neville',
+        'roll':100,
+        'city':'USA'
     }
     json_data=json.dumps(data)
     r=requests.put(url=URL,data=json_data)
@@ -58,7 +58,7 @@ def update_data():
 def delete_data():
     URL="http://127.0.0.1:8000/stu_apic/"
     data={
-        'id':10,
+        'id':17,
     }
 
     json_data=json.dumps(data)
@@ -70,7 +70,7 @@ def delete_data():
     # ______functions call_______
 
 # Deserialize_data()
-# post_data()
-# get_data(3)
+post_data()
+# get_data()
 # update_data()
-delete_data()
+# delete_data()

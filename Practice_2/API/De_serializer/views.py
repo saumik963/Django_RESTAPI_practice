@@ -149,8 +149,8 @@ class StudentAPI(View):
         pydata=JSONParser().parse(stream)
         id= pydata.get('id')
         stu=Student.objects.get(id=id)
-        # serializer=StudentSerialzer(stu,data=pydata)
-        serializer=StudentSerialzer(stu,data=pydata,partial=True)
+        # serializer=StudentSerialzer(stu,data=pydata)   # Require all field data
+        serializer=StudentSerialzer(stu,data=pydata,partial=True)   # Require partial field data only
         if serializer.is_valid():
             serializer.save()
             res={'msg':'Data Updated!'}
