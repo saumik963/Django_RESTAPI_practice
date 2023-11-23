@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'CB_API',
     'Generic_API',
+    'Concrete_API',
 ]
 
 MIDDLEWARE = [

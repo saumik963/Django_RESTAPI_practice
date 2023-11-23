@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Student
 from .serializers import StudentSerializer
-from rest_framework.generics import GenericAPIView
+from rest_framework.generics import GenericAPIView,ListAPIView,UpdateAPIView,ListCreateAPIView
 from rest_framework.mixins import ListModelMixin,CreateModelMixin,RetrieveModelMixin,UpdateModelMixin,DestroyModelMixin
 
 # Create your views here.
@@ -71,3 +71,8 @@ class RUDStudent(GenericAPIView,UpdateModelMixin,RetrieveModelMixin,DestroyModel
     
     def delete(self,request,*args, **kwargs):
         return self.destroy(request,*args, **kwargs)
+
+
+class StuLC(ListCreateAPIView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
