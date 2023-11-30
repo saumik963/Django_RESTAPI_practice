@@ -1,4 +1,4 @@
-from rest_framework.pagination import PageNumberPagination,LimitOffsetPagination
+from rest_framework.pagination import PageNumberPagination,LimitOffsetPagination,CursorPagination
 
 class MyPageNumberPagination(PageNumberPagination):
     page_size=10
@@ -13,3 +13,7 @@ class MyLOP(LimitOffsetPagination):
     limit_query_param='l'
     offset_query_param='os'
     # max_limit=6
+
+class MyCP(CursorPagination):
+    page_size=4
+    ordering='name'
